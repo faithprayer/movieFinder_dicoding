@@ -1,0 +1,107 @@
+header,
+movie-list {
+    animation: 3.5s ease-out anim-lineUp
+}
+
+* {
+    margin: 0;
+    font-family: sans-serif
+}
+
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, #65005e 3%, #3c84ce 38%, #30eee2 68%, #ff1919 98%);
+    animation: 15s infinite gradient;
+    background-size: 400% 400%;
+    background-attachment: fixed
+}
+
+@keyframes gradient {
+
+    0%,
+    100% {
+        background-position: 0 0
+    }
+
+    50% {
+        background-position: 100% 100%
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: 10s linear -3s infinite wave;
+    transform: translate3d(0, 0, 0);
+    opacity: .8;
+    bottom: 0;
+    left: 0;
+    z-index: -1
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: 18s linear infinite reverse wave;
+    opacity: .8
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: 20s -1s infinite reverse wave;
+    opacity: .9
+}
+
+@keyframes wave {
+
+    100%,
+    2% {
+        transform: translateX(1)
+    }
+
+    25%,
+    75% {
+        transform: translateX(-25%)
+    }
+
+    50% {
+        transform: translateX(-50%)
+    }
+}
+
+header {
+    background-color: #000;
+    color: #dafffb;
+    padding: 20px;
+    text-align: center
+}
+
+@keyframes anim-lineUp {
+    0% {
+        opacity: 0;
+        transform: translateX(50%)
+    }
+
+    20% {
+        opacity: 0
+    }
+
+    100%,
+    50% {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+movie-list {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap
+}
